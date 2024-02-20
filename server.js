@@ -6,11 +6,13 @@ const port = process.env.PORT || 8888;
 const hostname = process.env.HOSTNAME
 
 //config template egin
-//app.set('views','./src/views')
-//app.set('views engine','ejs')
+app.set('views','./src/views')
+app.set('views engine','ejs')
+
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('home.esjs')
+  res.render('home.ejs')
 })
 
 app.listen(port, () => {
