@@ -1,88 +1,44 @@
-<!doctype html>
-<html lang="en" class="semi-dark">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../public/assets/images/favicon-32x32.png" type="image/png" />
-  <!-- Bootstrap CSS -->
-  <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../public/assets/css/bootstrap-extended.css" rel="stylesheet" />
-  <link href="../public/assets/css/style.css" rel="stylesheet" />
-  <link href="../public/assets/css/icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API NodeJS</title>
+<!-- Bootstrap CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<body>
 
-  <!-- loader-->
-	<link href="../public/assets/css/pace.min.css" rel="stylesheet" />
-
-  <title>Login</title>
-</head>
-
-<body class="bg-login">
-
-  <!--start wrapper-->
-  <div class="wrapper">
-    
-       <!--start content-->
-       <main class="authentication-content mt-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-4 mx-auto">
-                        <div class="card shadow rounded-5 overflow-hidden">
-                            <div class="card-body p-4 p-sm-5">
-                                <h5 class="card-title text-center">ログイン</h5>
-                                <form class="form-body" method="POST" action="">
-                                    @csrf
-                                    <div class="row g-3">
-                                        <div class="col-12">
-                                            <label for="inputEmailAddress" class="form-label">メールアドレス</label>
-                                            <div class="ms-auto position-relative">
-                                                <div
-                                                    class="position-absolute top-50 translate-middle-y search-icon px-3">
-                                                    <i class="bi bi-person-circle"></i>
-                                                </div>
-                                                <input id="email" type="email" class="form-control radius-30 ps-5"
-                                                    name="email" value="" required
-                                                    autocomplete="email" autofocus placeholder="メールアドレス">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="inputChoosePassword" class="form-label">パスワード</label>
-                                            <div class="ms-auto position-relative">
-                                                <div
-                                                    class="position-absolute top-50 translate-middle-y search-icon px-3">
-                                                    <i class="bi bi-lock-fill"></i>
-                                                </div>
-                                                <input id="password" type="password"
-                                                    class="form-control radius-30 ps-5" name="password" required
-                                                    autocomplete="current-password" placeholder="パスワード">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="d-grid">
-                                                <button type="submit" class="btn btn-primary radius-30">Sign
-                                                    In</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        
-       <!--end page main-->
-
+<div class="container mt-5">
+  <h1>Đây là trang Api Nodejs</h1>
+  <div>
+    <h2>Thành viên :</h2>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tên</th>
+              <th scope="col">Chức vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Minh</td>
+              <td>Backend</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Hiển</td>
+                <td>Frontend</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
-  <!--end wrapper-->
+  
+</div>
 
+<!-- Optional JavaScript; choose one of the two! -->
 
-
-
-</body>
-
+<!-- Option 1: Bootstrap Bundle with Popper (Includes Popper for Dropdowns, Tooltips, and Popovers) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script></body>
 </html>
