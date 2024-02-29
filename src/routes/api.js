@@ -1,26 +1,34 @@
 const express = require('express')
 const {login} = require('../controllers/LoginController')
-const {getListUser} = require('../controllers/UserController')
+const {
+  getListUser,
+  getDetailUser,
+  editUser,
+  createUser,
+  deleteUser
+} = require('../controllers/UserController')
+const {
+  createProduct,
+  listProduct,
+} = require('../controllers/ProductController')
+const { userValidationRules } = require('../validate/validateRule')
+const { productValidationRules } = require('../validate/productRule')
 const routerAPI = express.Router()
-const jwt = require('jsonwebtoken');
-const secret = process.env.SECRET_API;
-
-//middleware kiểm tra token
-const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-
-    if (token == null) return res.sendStatus(401); // Không có token
-
-    jwt.verify(token, secret, (err, user) => {
-      if (err) return res.sendStatus(403); // Token không hợp lệ hoặc đã hết hạn
-      req.user = user;
-      next(); // Chuyển tới xử lý tiếp theo
-    });
-  };
+const authenticateToken = require('../middleware/verifyToken')
+const upload = require('../middleware/upload');
 
 routerAPI.post('/login', login)
+//User
+  routerAPI.get('/list-user', authenticateToken , getListUser);
+  routerAPI.get('/detail-user/:id', authenticateToken , getDetailUser);
 
-routerAPI.get('/list-user', authenticateToken , getListUser);
+  routerAPI.post('/edit-user/:id', authenticateToken , editUser);
+  routerAPI.post('/create-user', authenticateToken , userValidationRules , createUser);
 
+  routerAPI.delete('/delete-user/:id', authenticateToken , deleteUser);
+
+//Product
+routerAPI.get('/list-product', authenticateToken , listProduct);
+
+routerAPI.post('/create-product', authenticateToken , upload.single('image') , productValidationRules , createProduct);
 module.exports = routerAPI;

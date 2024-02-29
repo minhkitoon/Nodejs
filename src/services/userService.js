@@ -1,6 +1,6 @@
 const { User } = require('../models/user.model'); // Giả sử bạn đã export model từ file này
 
-async function getUsers(page, pageSize) {
+async function getListUsers(page, pageSize) {
   const offset = (page - 1) * pageSize;
   const limit = pageSize;
 
@@ -21,5 +21,5 @@ async function getUsers(page, pageSize) {
 }
 
 module.exports = {
-  getUsers
+  getListUsers
 };

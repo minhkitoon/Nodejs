@@ -1,6 +1,7 @@
 const sequelize = require('../config/database');
 var Sequelize = require('sequelize');
-const User = sequelize.define('users', {
+const Product = require('./product');
+const Image = sequelize.define('images', {
   // Model attributes are defined here
   id: {
     type: Sequelize.INTEGER,
@@ -8,23 +9,25 @@ const User = sequelize.define('users', {
     primaryKey: true,
     allowNull: false,
   },
-  username: {
+  table: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  address: {
-    type: Sequelize.STRING,
-  },
-  role: {
+  table_id: {
     type: Sequelize.INTEGER,
+    allowNull: false
   },
-  birthday: {
-    type: Sequelize.DATE,
+  path: {
+    type: Sequelize.STRING,
+    allowNull: false
   },
+  status: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+
 });
 
-module.exports = User
+
+
+module.exports = Image

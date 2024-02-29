@@ -5,40 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>API NodeJS</title>
 <!-- Bootstrap CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+  body, h1, p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #33ff33; /* Màu chữ xanh neon, phong cách mã lệnh */
+  }
+  body {
+    background-color: #000; /* Màu nền đen */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hacker-container {
+    text-align: center;
+    border: 3px solid #33ff33;
+    padding: 20px;
+  }
+</style>
+</head>
 <body>
-
 <div class="container mt-5">
-  <h1>Đây là trang Api Nodejs</h1>
-  <div>
-    <h2>Thành viên :</h2>
-    <table class="table table-success table-striped">
-        <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Tên</th>
-              <th scope="col">Chức vụ</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Minh</td>
-              <td>Backend</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Hiển</td>
-                <td>Frontend</td>
-            </tr>
-        </tbody>
-    </table>
-  </div>
-  
+    <div class="row">
+      <div class="col-md-8 offset-md-2 hacker-style">
+        <p class="hacker-text"></p>
+        <!-- <p>Member: </p> -->
+        
+      
+      </div>
+    </div>
 </div>
 
-<!-- Optional JavaScript; choose one of the two! -->
 
+<!-- Optional JavaScript; choose one of the two! -->
+<script>
+  const textElement = document.querySelector('.hacker-text');
+  const text = "Welcome to the API NodeJS \n Member : Nguyễn Nhật Minh";
+  let index = 0;
+  function typeEffect() {
+  if (index < text.length) {
+      const char = text.charAt(index);
+      textElement.innerHTML += char === '\n' ? '<br>' : char;
+      index++;
+      setTimeout(typeEffect, 100); // Điều chỉnh tốc độ gõ chữ tại đây
+    }
+  }
+  typeEffect();
+</script>
 <!-- Option 1: Bootstrap Bundle with Popper (Includes Popper for Dropdowns, Tooltips, and Popovers) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script></body>
 </html>
